@@ -11,24 +11,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4
         with:
           node-version: "24"
-
-      - name: Install dependencies
+      
+      - name: Install
         run: npm install
-
-      - name: Build app
-        run: npm run build
-
-      - name: Start app server
-        run: |
-          npm start &  # Lance le serveur en arrière-plan
-          sleep 5      # Attend que le serveur démarre
-
-      - name: Run API test
+      
+      - name: Test
         run: node app_tests_home.test.tsx

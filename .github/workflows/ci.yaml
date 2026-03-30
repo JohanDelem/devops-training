@@ -1,26 +1,36 @@
-name: my ci pipeline
-
+name: CI
 on:
-  push:
-    branches: [develop]
   pull_request:
-    branches: [develop]
+    branches:
+      - dev
+  push:
+    branches:
+      - dev
 
 jobs:
-  build:
+  CI:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      
-      - uses: actions/setup-node@v4
+      - name: checkout code
+        uses: actions/checkout@v4
+
+      - name: install node
+        uses: actions/setup-node@v3
         with:
-          node-version: "24"
-      
-      - name: Install
+          node-version: 24
+
+      - name: npm install
         run: npm install
-      
-      - name: Run test
-        run: |
-          cd nextjs-app
-          node app/__tests__/home.test.tsx
+
+      - name: build
+        run: npm run build
+
+      - name: start app
+        run: npm run start &
+
+      - name: wait for app
+        run: npx wait-on http://127.0.0.1:3000
+
+      - name: test
+        run: npx tsx app/__tests__/accueil.test.tsx

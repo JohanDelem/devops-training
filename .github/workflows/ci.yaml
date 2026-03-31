@@ -1,0 +1,37 @@
+name: my ci pipeline
+
+on:
+  pull_request:
+    branches:
+      - develop
+  push:
+    branches:
+      - develop
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build app
+        run: npm run build
+
+      - name: Build Docker image
+        run: docker build -t nextjs-devops .
+
+      - name: Run Docker container
+        run: docker run -d -p 3000:3000 --name nextjs-container nextjs-devops
+
+      - name: Check running containers
+        run: docker ps

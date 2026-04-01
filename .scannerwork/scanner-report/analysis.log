@@ -1,0 +1,51 @@
+Plugins:
+Bundled analyzers:
+  - Clean as You Code 2.6.0.3665 (cayc)
+  - IaC Code Quality and Security 2.6.1.19203 (iac)
+  - Text Code Quality and Security 2.41.0.10709 (text)
+Global server settings:
+  - sonar.azureresourcemanager.file.suffixes=.bicep
+  - sonar.core.id=147B411E-AZ1DXYl_6REWdhkob56J
+  - sonar.core.startTime=2026-03-31T10:08:13+0000
+  - sonar.cs.file.suffixes=.cs,.razor
+  - sonar.css.file.suffixes=.css,.less,.scss,.sass
+  - sonar.docker.file.patterns=*.dockerfile,Dockerfile,dockerfile
+  - sonar.flex.file.suffixes=as
+  - sonar.forceAuthentication=true
+  - sonar.go.file.suffixes=.go
+  - sonar.html.file.suffixes=.html,.xhtml,.cshtml,.vbhtml,.aspx,.ascx,.rhtml,.erb,.shtm,.shtml,.cmp,.twig,.htm
+  - sonar.ipynb.file.suffixes=ipynb
+  - sonar.java.file.suffixes=.java,.jav
+  - sonar.java.jvmframeworkconfig.file.patterns=**/src/main/resources/**/*app*.properties,**/src/main/resources/**/*app*.yaml,**/src/main/resources/**/*app*.yml
+  - sonar.javascript.file.suffixes=.js,.jsx,.cjs,.mjs,.vue
+  - sonar.json.file.suffixes=.json
+  - sonar.jsp.file.suffixes=.jsp,.jspf,.jspx
+  - sonar.kotlin.file.suffixes=.kt,.kts
+  - sonar.multi-quality-mode.enabled=true
+  - sonar.php.file.suffixes=php,php3,php4,php5,phtml,inc
+  - sonar.python.file.suffixes=py
+  - sonar.qualityProfiles.allowDisableInheritedRules=true
+  - sonar.ruby.file.suffixes=.rb
+  - sonar.rust.file.suffixes=.rs
+  - sonar.scala.file.suffixes=.scala
+  - sonar.terraform.file.suffixes=.tf
+  - sonar.typescript.file.suffixes=.ts,.tsx,.cts,.mts
+  - sonar.vbnet.file.suffixes=.vb
+  - sonar.xml.file.suffixes=.xml,.xsd,.xsl,.config
+  - sonar.yaml.file.suffixes=.yaml,.yml
+Project server settings:
+Project scanner properties:
+  - sonar.host.url=http://localhost:9000
+  - sonar.javascript.lcov.reportPaths=coverage/lcov.info
+  - sonar.projectBaseDir=/mnt/c/Users/Johan/Desktop/devops-training/nextjs-app
+  - sonar.projectKey=nextjs-devops-training
+  - sonar.projectName=nextjs-devops-training
+  - sonar.projectVersion=1.0
+  - sonar.scanner.app=ScannerCli
+  - sonar.scanner.appVersion=3.1.0.1141
+  - sonar.sourceEncoding=UTF-8
+  - sonar.sources=app
+  - sonar.test.inclusions=**/*.test.tsx
+  - sonar.tests=app
+  - sonar.token=******
+  - sonar.working.directory=/mnt/c/Users/Johan/Desktop/devops-training/nextjs-app/.scannerwork
